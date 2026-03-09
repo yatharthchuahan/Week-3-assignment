@@ -1,5 +1,3 @@
-/* TASK 4 — Countdown Timer */
-
 const TOTAL_SECONDS = 60 * 60;
 const RING_CIRC     = 628.32;
 const WARNING_THRESHOLD = 60;
