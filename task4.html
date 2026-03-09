@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4 — Countdown Timer</title>
+    <link rel="stylesheet" href="task4.css" />
+  </head>
+  <body>
+
+    <main class="container">
+
+      <header class="header">
+        <span class="label-tag">Task 04 // Countdown</span>
+        <h1 class="title">COUNTDOWN</h1>
+        <p class="subtitle">One Hour Sequence</p>
+      </header>
+
+      <section class="timer-wrap">
+        <svg class="ring-svg" viewBox="0 0 220 220">
+          <circle class="ring-track"    cx="110" cy="110" r="100"/>
+          <circle class="ring-progress" cx="110" cy="110" r="100" id="ringProgress"/>
+        </svg>
+        <div class="timer-face">
+          <div class="time-display" id="timeDisplay">60:00</div>
+          <div class="time-label">MM : SS</div>
+        </div>
+      </section>
+
+      <div class="message-wrap" id="messageWrap">
+        <span class="message-text">⚡ Sequence Complete</span>
+      </div>
+
+      <section class="controls">
+        <button class="btn btn--start" id="btnStart">Start</button>
+        <button class="btn btn--pause" id="btnPause" disabled>Pause</button>
+        <button class="btn btn--reset" id="btnReset">Reset</button>
+      </section>
+
+      <footer class="status-bar">
+        <span id="statusText">READY</span>
+        <span class="dot" id="statusDot"></span>
+      </footer>
+
+    </main>
+
+    <script src="task4.js"></script>
+  </body>
+</html>
