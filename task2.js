@@ -1,23 +1,53 @@
-const arrayA = [1, 2, 3, 4, 5, 6];
-const arrayB = [4, 5, 6, 7, 8, 9];
+// Task 2
+// function to get unique elements from 2 arrays
 
-function getUniqueElements(arr1, arr2) {
-  const onlyInArr1 = arr1.filter(item => !arr2.includes(item));
-  const onlyInArr2 = arr2.filter(item => !arr1.includes(item));
-  return [...onlyInArr1, ...onlyInArr2];
+function getUniqueElements(array1, array2) {
+    var newArray = [];
+    
+    
+    for (var x = 0; x < array1.length; x++) {
+        var alreadyThere = false;
+        
+        
+        for (var y = 0; y < array2.length; y++) {
+            if (array1[x] === array2[y]) {
+                alreadyThere = true;
+                break;
+            }
+        }
+        
+       
+        if (!alreadyThere) {
+            newArray.push(array1[x]);
+        }
+    }
+    
+    
+    for (var p = 0; p < array2.length; p++) {
+        var alreadyThere2 = false;
+        
+        
+        for (var q = 0; q < array1.length; q++) {
+            if (array2[p] === array1[q]) {
+                alreadyThere2 = true;
+                break;
+            }
+        }
+        
+        
+        if (!alreadyThere2) {
+            newArray.push(array2[p]);
+        }
+    }
+    
+    return newArray;
 }
 
-const result = getUniqueElements(arrayA, arrayB);
+var arrA = [1, 2, 3, 4, 5, 6];
+var arrB = [4, 5, 6, 7, 8, 9];
 
-const shared = arrayA.filter(item => arrayB.includes(item));
+var resultArray = getUniqueElements(arrA, arrB);
 
-console.log("━".repeat(50));
-console.log("  TASK 2 — Return Unique Elements");
-console.log("━".repeat(50));
-console.log(`  Array A        : [${arrayA.join(", ")}]`);
-console.log(`  Array B        : [${arrayB.join(", ")}]`);
-console.log("─".repeat(50));
-console.log(`  Shared (excluded) : [${shared.join(", ")}]`);
-console.log("─".repeat(50));
-console.log(`  Unique Elements   : [${result.join(", ")}]`);
-console.log("━".repeat(50));
+console.log("Array A: " + arrA);
+console.log("Array B: " + arrB);
+console.log("Unique elements: " + resultArray);

@@ -1,32 +1,20 @@
-const numbers = [23, 45, 67, 89, 12, 90, 44];
+// Task 1 - second largest number
 
-function findSecondLargest(arr) {
-  if (arr.length < 2) {
-    return null;
-  }
+var numbers = [23, 45, 67, 89, 12, 90, 44];
 
-  let largest       = -Infinity;
-  let secondLargest = -Infinity;
+var first = 0;
+var second = 0;
 
-  for (const num of arr) {
-    if (num > largest) {
-      secondLargest = largest;
-      largest       = num;
-    } else if (num > secondLargest && num !== largest) {
-      secondLargest = num;
+for(var i = 0; i < numbers.length; i++) {
+    if(numbers[i] > first) {
+        second = first;
+        first = numbers[i];
     }
-  }
-
-  return secondLargest === -Infinity ? null : secondLargest;
+    else if(numbers[i] > second) {
+        second = numbers[i];
+    }
 }
 
-console.log("━".repeat(45));
-console.log("  TASK 1 — Find Second Largest Number");
-console.log("━".repeat(45));
-console.log(`  Input Array   : [${numbers.join(", ")}]`);
-
-const result = findSecondLargest(numbers);
-
-console.log(`  Largest       : ${Math.max(...numbers)}`);
-console.log(`  Second Largest: ${result}`);
-console.log("━".repeat(45));
+console.log("Array: " + numbers);
+console.log("First largest: " + first);
+console.log("Second largest: " + second);
